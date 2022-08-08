@@ -1,15 +1,11 @@
 <template>
-  <button :class="styling" @click="$emit('btn-clicked')">{{ text }}</button>
+  <button :class="styling" @click="$emit('btn-clicked')"><slot /></button>
 </template>
 
 <script>
 export default {
   emits: ["btn-clicked"],
   props: {
-    text: {
-      type: String,
-      required: true,
-    },
     variant: {
       type: String,
       default: "primary",
